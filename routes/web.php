@@ -16,3 +16,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Routing and Responses
+
+// Route::get('/hello', function() {
+//     return 'Hello World';
+// });
+
+// Route::get('/hello', function() {
+//     return response('<h1>Hello World</h1>');
+// });
+
+// Route::get('/hello', function() {
+//     return response('<h1>Hello World</h1>', 200)
+//         ->header('Content-Type', 'text/plain');
+// });
+
+// adding custom header
+Route::get('/hello', function() {
+    return response('<h1>Hello World</h1>', 200)
+        ->header('Content-Type', 'text/plain')
+        ->header('foo', 'bar');
+});
