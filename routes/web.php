@@ -38,3 +38,15 @@ Route::get('/hello', function() {
         ->header('Content-Type', 'text/plain')
         ->header('foo', 'bar');
 });
+
+// Wildcard Endpoints
+
+// In this case, the id is getting passed in as a wildcard
+Route::get('/posts/{id}', function($id){
+    return response('Post ' . $id);
+});
+
+// If you don't want the wildcard to include letters and symbols
+Route::get('/posts/{id}', function($id){
+    return response('Post ' . $id);
+})->where('id', '[0-9]+');
