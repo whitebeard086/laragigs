@@ -50,3 +50,18 @@ Route::get('/posts/{id}', function($id){
 Route::get('/posts/{id}', function($id){
     return response('Post ' . $id);
 })->where('id', '[0-9]+');
+
+// Die Dump Helpers
+
+// Some helper methods for debugging and showing values
+Route::get('/posts/{id}', function($id){
+    dd($id);
+    return response('Post ' . $id);
+})->where('id', '[0-9]+');
+
+// Die Dump and Debug
+// Offers more info than dd
+Route::get('/posts/{id}', function($id){
+    ddd($id);
+    return response('Post ' . $id);
+})->where('id', '[0-9]+');
