@@ -14,17 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// API Routes for building an API
-
-Route::get('/posts', function() {
-    return response()->json([
-        'posts' => [
-            'title' => 'My First Post',
-            'body' => 'This is the body of my first post'
-        ]
-    ]);
-});
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
