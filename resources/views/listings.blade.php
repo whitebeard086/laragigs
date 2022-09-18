@@ -1,16 +1,20 @@
-<h1>{{$heading}}</h1>
+@extends('layout')
 
-@unless(count($listings) == 0)
+@section('content')
+    <h1>{{$heading}}</h1>
 
-    @foreach($listings as $listing)
-        <h2>
-            <a href="/listings/{{$listing['id']}}">{{$listing['title']}}</a>
-        </h2>
-        <p>
-            {{$listing['description']}}
-        </p>
-    @endforeach
+    @unless(count($listings) == 0)
 
-    @else
-        <p>No listings found</p>
-@endunless
+        @foreach($listings as $listing)
+            <h2>
+                <a href="/listings/{{$listing['id']}}">{{$listing['title']}}</a>
+            </h2>
+            <p>
+                {{$listing['description']}}
+            </p>
+        @endforeach
+
+        @else
+            <p>No listings found</p>
+    @endunless
+@endsection
