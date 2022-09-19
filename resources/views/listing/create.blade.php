@@ -9,7 +9,8 @@
             <p class="mb-4">Post a gig to find a developer</p>
         </header>
 
-        <form action="">
+        <form method="POST" action="/listings">
+            @csrf
             <div class="mb-6">
                 <label
                     for="company"
@@ -21,6 +22,12 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="company"
                 />
+
+                @error('company')
+                    <div class="text-red-500 text-xs mt-1">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -33,6 +40,12 @@
                     name="title"
                     placeholder="Example: Senior Laravel Developer"
                 />
+
+                @error('title')
+                    <div class="text-red-500 text-xs mt-1">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -47,6 +60,12 @@
                     name="location"
                     placeholder="Example: Remote, Boston MA, etc"
                 />
+
+                @error('location')
+                    <div class="text-red-500 text-xs mt-1">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -58,6 +77,12 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="email"
                 />
+
+                @error('email')
+                    <div class="text-red-500 text-xs mt-1">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -72,6 +97,12 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="website"
                 />
+
+                @error('website')
+                    <div class="text-red-500 text-xs mt-1">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -84,9 +115,15 @@
                     name="tags"
                     placeholder="Example: Laravel, Backend, Postgres, etc"
                 />
+
+                @error('tags')
+                    <div class="text-red-500 text-xs mt-1">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
 
-            <div class="mb-6">
+            {{-- <div class="mb-6">
                 <label for="logo" class="inline-block text-lg mb-2">
                     Company Logo
                 </label>
@@ -95,7 +132,7 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="logo"
                 />
-            </div>
+            </div> --}}
 
             <div class="mb-6">
                 <label
@@ -110,6 +147,12 @@
                     rows="10"
                     placeholder="Include tasks, requirements, salary, etc"
                 ></textarea>
+
+                @error('description')
+                    <div class="text-red-500 text-xs mt-1">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-6">
