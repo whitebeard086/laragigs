@@ -35,6 +35,7 @@ class ListingController extends Controller
             'location' => 'required',
             'website' => 'required',
             'email' => ['required', 'email'],
+            'tags' => 'required',
             'description' => 'required',
         ]);
 
