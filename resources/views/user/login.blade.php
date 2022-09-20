@@ -17,7 +17,7 @@
                     type="email"
                     class="border border-gray-200 rounded p-2 w-full"
                     name="email"
-                    value="{{old('email')}}"
+                    value="demo@test.com"
                 />
                 
                 @error('email')
@@ -38,7 +38,7 @@
                     type="password"
                     class="border border-gray-200 rounded p-2 w-full"
                     name="password"
-                    value="{{old('password')}}"
+                    value="123456"
                 />
 
                 @error('password')
